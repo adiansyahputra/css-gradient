@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS Gradient Animation</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet" />
+        <style>
+            /* https://cssgradient.io/ */
+            :root {
+                --gradient1: linear-gradient(102.4deg, rgba(253, 189, 85, 1) 7.8%, rgba(249, 131, 255, 1) 100.3%);
+                --gradient2: linear-gradient(109.6deg, rgba(61, 245, 167, 1) 11.2%, rgba(9, 111, 224, 1) 91.1%);
+            }
+
+            body {
+                min-height: 100vh;
+                background-color: #eaeaea;
+                background-image: var(--gradient1);
+                background-size: 200%;
+                background-position: right;
+                animation: gradient-animation 25s infinite alternate;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            @keyframes gradient-animation {
+                0% {
+                    background-position: left;
+                }
+                100% {
+                    background-position: right;
+                }
+            }
+
+            h1 {
+                font-size: 8rem;
+                text-align: center;
+                /* margin: auto; */
+                font-family: 'Lilita One', cursive;
+                background-image: var(--gradient2);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                /* text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7); */
+                filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.7));
+            }
+
+            h1:hover {
+                cursor: pointer;
+                animation: gradient-animation 5s infinite alternate;
+                background-size: 200%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Adiansyah Putra.</h1>
+    </body>
+</html>
